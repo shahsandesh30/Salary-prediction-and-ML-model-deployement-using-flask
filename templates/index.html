@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body style="background-color:#967e7e">
+
+  <h1 style="text-align:center;color: #CDDC39;">Salary Prediction Analysis</h1>
+<div class="container" style="align-content: center;">
+
+    <form action="{{url_for('predict')}}" method="post" class="login" style="text-align: center;">
+        
+    <label for="uname" style="color: #000;"><b>Experience years</b></label>
+    <br>
+    <input  type="number" name="experience" placeholder="Experience years" required="required">
+    <br>
+
+    <label for="psw" style="color: #000;"><b>Test Score</b></label>
+    <br>
+    <input type="number" name="test" placeholder="Test Score" required="required">
+    <br>
+
+    <label for="psw" style="color: #000;"><b>Interview Score</b></label>
+    <br>
+    <input type="number" name="interview" placeholder="Interview Score" required="required">
+    <br>
+   
+    <button type="submit" style="padding: 8px 28px;width: 10%;" >Predict</button>
+    
+  </form>
+</div>
+<br>
+<br>
+<div style="text-align:center; color: rgb(8, 10, 7);">{{ prediction_text }}</span>
+</body>
+</html>
